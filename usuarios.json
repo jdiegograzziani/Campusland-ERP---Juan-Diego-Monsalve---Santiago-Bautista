@@ -1,0 +1,87 @@
+{
+    "campers": {
+        "10": {
+            "cc": "10",
+            "nombre": "nicolas",
+            "apellido": "laguado",
+            "direccion": "calle 13",
+            "acudiente": "daniela",
+            "celular": "10234",
+            "fijo": "10",
+            "estado": "Cursando",
+            "riesgo": "Bajo",
+            "ruta": {
+                "rutaActiva": "java",
+                "modulos": {
+                    "nodejs": {
+                        "nota_teo": 0.0,
+                        "nota_prac": 0.0,
+                        "nota_quices": 0.0,
+                        "nota_final": 0.0,
+                        "final": "N/A"
+                    },
+                    "java": {
+                        "nota_teo": 0.0,
+                        "nota_prac": 0.0,
+                        "nota_quices": 0.0,
+                        "nota_final": 0.0,
+                        "final": "N/A"
+                    },
+                    "netcore": {
+                        "nota_teo": 0.0,
+                        "nota_prac": 0.0,
+                        "nota_quices": 0.0,
+                        "nota_final": 0.0,
+                        "final": "N/A"
+                    },
+                    "fundamentos_programacion": {
+                        "nota_teo": 0.0,
+                        "nota_prac": 0.0,
+                        "nota_quices": 0.0,
+                        "nota_final": 0.0,
+                        "final": "N/A"
+                    },
+                    "programacion_web": {
+                        "nota_teo": 0.0,
+                        "nota_prac": 0.0,
+                        "nota_quices": 0.0,
+                        "nota_final": 0.0,
+                        "final": "N/A"
+                    },
+                    "programacion_formal": {
+                        "nota_teo": 0.0,
+                        "nota_prac": 0.0,
+                        "nota_quices": 0.0,
+                        "nota_final": 0.0,
+                        "final": "N/A"
+                    },
+                    "bases_de_datos": {
+                        "nota_teo": 0.0,
+                        "nota_prac": 0.0,
+                        "nota_quices": 0.0,
+                        "nota_final": 0.0,
+                        "final": "N/A"
+                    },
+                    "backend": {
+                        "nota_teo": 0.0,
+                        "nota_prac": 0.0,
+                        "nota_quices": 0.0,
+                        "nota_final": 0.0,
+                        "final": "N/A"
+                    }
+                }
+            }
+        }
+    },
+    "trainers": {},
+    "coordinadores": {
+        "1097185445": {
+            "cc": "1097185445",
+            "nombre": "Juan Diego",
+            "apellido": "Monsalve",
+            "direccion": "la cumbre",
+            "celular": "310620320",
+            "fijo": "3102040"
+        }
+    }
+}

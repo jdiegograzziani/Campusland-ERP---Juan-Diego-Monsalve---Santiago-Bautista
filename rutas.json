@@ -1,0 +1,54 @@
+{
+    "nodejs": {
+        "trainer": null,
+        "salon": null,
+        "campers": [],
+        "historial": []
+    },
+    "java": {
+        "trainer": null,
+        "salon": null,
+        "campers": [
+            "10"
+        ],
+        "historial": [
+            "10"
+        ]
+    },
+    "netcore": {
+        "trainer": null,
+        "salon": null,
+        "campers": [],
+        "historial": []
+    },
+    "fundamentos_programacion": {
+        "trainer": null,
+        "salon": null,
+        "campers": [],
+        "historial": []
+    },
+    "programacion_web": {
+        "trainer": null,
+        "salon": null,
+        "campers": [],
+        "historial": []
+    },
+    "programacion_formal": {
+        "trainer": null,
+        "salon": null,
+        "campers": [],
+        "historial": []
+    },
+    "bases_de_datos": {
+        "trainer": null,
+        "salon": null,
+        "campers": [],
+        "historial": []
+    },
+    "backend": {
+        "trainer": null,
+        "salon": null,
+        "campers": [],
+        "historial": []
+    }
+}
