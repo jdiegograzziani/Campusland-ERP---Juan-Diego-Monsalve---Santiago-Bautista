@@ -1,15 +1,3 @@
-# Programa para llevar seguimiento academico a todos los matriculados
-
-# Funcion para procesar inscripciones
-# # de identificación.
-# Nombres.
-# Apellidos.
-# Dirección.
-# Acudiente.
-# Teléfonos de contacto(# de celular y #fijo).
-# Estado (En proceso de ingreso, Inscrito, Aprobado,Cursando, Graduado, Expulsado, Retirado).
-# Riesgo
-
 import os
 from datetime import datetime
 from json_functions import (
@@ -18,22 +6,6 @@ from json_functions import (
     crear_backup, restaurar_backup, verificar_integridad,
     menu_gestion_archivos
 )
-
-# mi idea es crear un diccionario de usuarios con 3 raices en base a los 3 roles, con identificadores
-# de # de cedula para proceder el acceso, permitir entrada a funciones administrativas en base a if in 
-# hacer funcion para pasar los estudiantes en APROBADOS, hacer funcionalidad para poder pasar diccionario
-# de campers entre , para el registro de camper tener 3 estados: en proceso, aprobado, cursando,
-# graduado, expulsado, retirado, y que los campers y su informacion puedan ser movidos entre estos 6.
-# hacer un if camper in aprobados se le asigne una ruta, crear funcion, 
-# Asignar Rutas de Estudio, donde muestre todos los camper en aprobados, y apenas se les asigne ruta
-# salgan de aprobados a cursando
-
-## Modulos menu principal
-## Registrar Camper
-## Registrar Trainer
-## Registrar Coordinador
-## Reportes
-## Asignar Rutas de Formacion
 
 # Inicializar archivos y cargar datos al inicio
 crear_archivos_iniciales()
@@ -163,6 +135,7 @@ def registrar_trainer():
         "celular": celular,
         "fijo": fijo,
         "ruta": None,
+        "salon": salones,
     }
     print(f"Trainer {nombre} {apellido} registrado exitosamente!")
     guardar_usuarios(usuarios)  # Guardar después de registrar
@@ -343,7 +316,7 @@ def calificar_modulo(cc, modulo):
 
 def asignar_ruta():
     print("------- Asignación de Clases -------")
-    print("-- SOLO COORDINADORES PUEDEN ACCEDER A ESTA FUNCION -- ")
+    print("-- SOLO COORDINADORES PUEDEN ACCEDER A ESTA FUNCION --")
 
     if not acceso_coordinador():
         return
@@ -354,7 +327,7 @@ def asignar_ruta():
         print("Este camper no esta registrado...")
         return False
     
-    print(f"Ingrese la opcion que necesita para el estudiante: '{camper[cc]["nombre"]}' con CC {cc} ")
+    print(f"Ingrese la opcion que necesita para el estudiante: '{camper[cc]['nombre']}' con CC {cc} ")
     print("Al seleccionar Ruta de Estudio, el Trainer y el Salon se asignan automaticamente")
     print("1. Asignar Ruta de Estudio")
     print("2. Calificar Modulo (Calificar Ruta Activa)")
@@ -503,7 +476,8 @@ def generar_reportes():
         print("4. Reporte de Notas por Camper")
         print("5. Reporte de Campers en Riesgo")
         print("6. Gestión de Archivos y Backups")
-        print("7. Volver")
+        print("7. Reporte consolidado de Trainers y rutas a JSON")
+        print("8. Volver")
         
         opcion = input(":")
         
@@ -521,6 +495,8 @@ def generar_reportes():
             case "6":
                 menu_gestion_archivos()
             case "7":
+                reporte_trainers_rutas()
+            case "8":
                 break
 
 def reporte_campers_estado():
@@ -560,6 +536,32 @@ def reporte_rutas():
             for cc in info['campers']:
                 if cc in camper:
                     print(f"  - {camper[cc]['nombre']} {camper[cc]['apellido']} (CC: {cc})")
+
+def reporte_trainers_rutas():
+    print("-------- TRAINERS REGISTRADOS -------")
+
+
+    trainer = usuarios["trainers"]
+    
+    if not trainer:
+        print("No hay trainers registrados")
+        return
+    
+    for cc, info in trainer.items():
+        print(f"\nCC: {cc}")
+        print(f"Nombre: {info['nombre']} {info['apellido']}")
+        print(f"Teléfono: {info['celular']}")
+        print(f"Ruta asignada: {info['ruta'] if info['ruta'] else 'Sin asignar'}")
+
+        print("--- RUTAS ACTIVAS Y TRAINERS ASIGNADOS A SU RESPECTIVO SALON ---")
+
+    for ruta, info in rutas.items():
+        print(f"\n--- {ruta.replace('_', ' ').upper()} ---")
+        print(f"Trainer: {info['trainer'] if info['trainer'] else 'Sin asignar'}")
+        print(f"Salon: {info['salon'] if info['salon'] else 'Sin asignar'}")
+        print(f"Campers activos: {len(info['campers'])}")
+        print(f"Total histórico: {len(info['historial'])}")
+
 
 def reporte_trainers():
     print("\n===== REPORTE DE TRAINERS =====")

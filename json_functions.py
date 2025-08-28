@@ -8,6 +8,7 @@ from datetime import datetime
 ARCHIVO_USUARIOS = "usuarios.json"
 ARCHIVO_RUTAS = "rutas.json"
 ARCHIVO_BACKUP = "backup_campuslands.json"
+ARCHIVO_TRAINERS = "reporte_datos_trainer.json"
 
 def crear_archivos_iniciales():
     """Crea los archivos JSON iniciales si no existen"""
@@ -42,6 +43,13 @@ def crear_archivos_iniciales():
         with open(ARCHIVO_RUTAS, 'w', encoding='utf-8') as f:
             json.dump(rutas_inicial, f, indent=4, ensure_ascii=False)
         print(f"Archivo {ARCHIVO_RUTAS} creado.")
+
+    # Crear archivo de datos trainer si no existe
+    if not os.path.exists(ARCHIVO_TRAINERS):
+        with open(ARCHIVO_TRAINERS, "w", encoding="utf-8") as f:
+            json.dump(rutas_inicial, f, indent=4, ensure_ascii=False)
+        print(f"Archivo {ARCHIVO_TRAINERS} creado.")
+
 
 def cargar_usuarios():
     """Carga los datos de usuarios desde el archivo JSON"""

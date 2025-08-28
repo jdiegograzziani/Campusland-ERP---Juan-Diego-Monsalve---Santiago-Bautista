@@ -11,7 +11,7 @@
             "estado": "Cursando",
             "riesgo": "Bajo",
             "ruta": {
-                "rutaActiva": "java",
+                "rutaActiva": "bases_de_datos",
                 "modulos": {
                     "nodejs": {
                         "nota_teo": 0.0,
@@ -73,7 +73,42 @@
             }
         }
     },
-    "trainers": {},
+    "trainers": {
+        "115": {
+            "cc": "115",
+            "nombre": "Daniel",
+            "apellido": "Lozano",
+            "direccion": "Calle 8 n23-15",
+            "celular": "3188854421",
+            "fijo": "21548252",
+            "ruta": "bases_de_datos",
+            "salon": [
+                "Salon A",
+                "Salon B",
+                "Salon C",
+                "Salon D",
+                "Salon E",
+                "Salon F"
+            ]
+        },
+        "117": {
+            "cc": "117",
+            "nombre": "Nicolas ",
+            "apellido": "Arley",
+            "direccion": "calle 9",
+            "celular": "978485164",
+            "fijo": "15246854",
+            "ruta": "nodejs",
+            "salon": [
+                "Salon A",
+                "Salon B",
+                "Salon C",
+                "Salon D",
+                "Salon E",
+                "Salon F"
+            ]
+        }
+    },
     "coordinadores": {
         "1097185445": {
             "cc": "1097185445",

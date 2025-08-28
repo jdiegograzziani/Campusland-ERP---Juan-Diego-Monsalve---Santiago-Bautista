@@ -1,16 +1,14 @@
 {
     "nodejs": {
-        "trainer": null,
-        "salon": null,
+        "trainer": "Nicolas  Arley",
+        "salon": "Salon B",
         "campers": [],
         "historial": []
     },
     "java": {
         "trainer": null,
         "salon": null,
-        "campers": [
-            "10"
-        ],
+        "campers": [],
         "historial": [
             "10"
         ]
@@ -40,10 +38,14 @@
         "historial": []
     },
     "bases_de_datos": {
-        "trainer": null,
-        "salon": null,
-        "campers": [],
-        "historial": []
+        "trainer": "Daniel Lozano",
+        "salon": "Salon E",
+        "campers": [
+            "10"
+        ],
+        "historial": [
+            "10"
+        ]
     },
     "backend": {
         "trainer": null,
